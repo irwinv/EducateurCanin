@@ -1,0 +1,7 @@
+elevage_accueil:
+    pattern:  /
+    defaults: { _controller: PatrickElevageBundle:Default:index }
+
+elevage_ajout:
+    pattern:  /ajout
+    defaults: { _controller: PatrickElevageBundle:Chiens:ajout }

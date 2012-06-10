@@ -2,18 +2,20 @@
 
 namespace Patrick\ElevageBundle\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\DependencyInjection\ContainerAware,
+       Symfony\Component\HttpFoundation\RedirectResponse;
 
-class DefaultController extends Controller
+
+class DefaultController extends ContainerAware
 {
-    /**
-     * @Route("/hello/{name}")
-     * @Template()
-     */
-    public function indexAction($name)
+
+    public function indexAction()
     {
-        return array('name' => $name);
+
+		$message = "Meh";
+
+        return $this->container->get('templating')->renderResponse('PatrickElevageBundle:Default:index.html.twig',
+			array('message' => $message)
+		);
     }
 }

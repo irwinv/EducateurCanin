@@ -25,6 +25,10 @@ class appprodUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         $allow = array();
         $pathinfo = urldecode($pathinfo);
 
+        // elevage_ajout
+        if ($pathinfo === '/elevage/ajout') {
+            return array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::ajoutAction',  '_route' => 'elevage_ajout',);
+        }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }

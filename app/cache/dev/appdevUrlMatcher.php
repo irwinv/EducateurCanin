@@ -143,6 +143,22 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
         }
 
+        if (0 === strpos($pathinfo, '/elevage')) {
+            // elevage_accueil
+            if (rtrim($pathinfo, '/') === '/elevage') {
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'elevage_accueil');
+                }
+                return array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\DefaultController::indexAction',  '_route' => 'elevage_accueil',);
+            }
+
+            // elevage_ajout
+            if ($pathinfo === '/elevage/ajout') {
+                return array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::ajoutAction',  '_route' => 'elevage_ajout',);
+            }
+
+        }
+
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();
     }
 }

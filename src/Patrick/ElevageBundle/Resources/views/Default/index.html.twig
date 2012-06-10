@@ -1,1 +1,7 @@
-Hello {{ name }}!
+{% extends '::base.html.twig' %}
+
+{% block body %}
+	<h1>Elevage Les Vigilants SARTROUVILLE</h1>
+	<a href="{{ path('elevage_ajout') }} ">Ajouter un chien</a>
+{% endblock body %}
+

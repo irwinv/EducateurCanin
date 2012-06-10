@@ -1,0 +1,8 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+	<form action="#" {{ form_enctype(form) }} method="POST">
+		{{ form_widget(form) }}
+		{{ form_rest(form) }}
+	</form>
+{% endblock body %}
