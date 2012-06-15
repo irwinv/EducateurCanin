@@ -1,0 +1,10 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+	<p>{{ msg }}</p>
+	<ul>
+	{% for chien in chiens %}
+		<li>{{ chien.titre }} {{ chien.nom }} {{ chien.sexe }}</li>
+	{% endfor %}
+	</ul>
+{% endblock body %}

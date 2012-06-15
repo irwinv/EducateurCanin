@@ -35,6 +35,7 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_final' => true,
        'elevage_accueil' => true,
        'elevage_ajout' => true,
+       'elevage_chiens' => true,
     );
 
     /**
@@ -166,5 +167,10 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
     private function getelevage_ajoutRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::ajoutAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/ajout',  ),));
+    }
+
+    private function getelevage_chiensRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::showAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  1 =>   array (    0 => 'text',    1 => '/elevage/chien/race',  ),));
     }
 }

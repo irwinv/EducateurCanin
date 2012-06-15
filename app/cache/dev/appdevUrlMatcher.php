@@ -157,6 +157,11 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                 return array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::ajoutAction',  '_route' => 'elevage_ajout',);
             }
 
+            // elevage_chiens
+            if (0 === strpos($pathinfo, '/elevage/chien/race') && preg_match('#^/elevage/chien/race/(?P<id>[^/]+?)$#xs', $pathinfo, $matches)) {
+                return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::showAction',)), array('_route' => 'elevage_chiens'));
+            }
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

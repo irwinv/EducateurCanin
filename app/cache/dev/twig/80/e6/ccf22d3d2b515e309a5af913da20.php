@@ -33,8 +33,9 @@ class __TwigTemplate_80e6ccf22d3d2b515e309a5af913da20 extends Twig_Template
         // line 5
         echo $this->env->getExtension('form')->renderWidget($this->getContext($context, "form"));
         echo "
+\t\t<input type=\"submit\" value=\"Enregistrer\" />
 \t\t";
-        // line 6
+        // line 7
         echo $this->env->getExtension('form')->renderRest($this->getContext($context, "form"));
         echo "
 \t</form>

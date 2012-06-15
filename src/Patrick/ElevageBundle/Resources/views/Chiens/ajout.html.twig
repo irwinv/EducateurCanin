@@ -3,6 +3,7 @@
 {% block body %}
 	<form action="#" {{ form_enctype(form) }} method="POST">
 		{{ form_widget(form) }}
+		<input type="submit" value="Enregistrer" />
 		{{ form_rest(form) }}
 	</form>
 {% endblock body %}
