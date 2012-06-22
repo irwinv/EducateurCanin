@@ -56,6 +56,16 @@ class Chiens
      */
     private $race;
 
+	/**
+	* @ORM\OneToMany(targetEntity="Images", mappedBy="chien", cascade={"all"})
+	*
+	*/
+	private $img;
+    public function __construct()
+    {
+        $this->img = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
     /**
      * Get id
      *
@@ -89,7 +99,7 @@ class Chiens
     /**
      * Set sexe
      *
-     * @param integer $sexe
+     * @param string $sexe
      */
     public function setSexe($sexe)
     {
@@ -99,7 +109,7 @@ class Chiens
     /**
      * Get sexe
      *
-     * @return integer
+     * @return string
      */
     public function getSexe()
     {
@@ -164,5 +174,25 @@ class Chiens
     public function getRace()
     {
         return $this->race;
+    }
+
+    /**
+     * Add img
+     *
+     * @param Patrick\ElevageBundle\Entity\Images $img
+     */
+    public function addImages(\Patrick\ElevageBundle\Entity\Images $img)
+    {
+        $this->img[] = $img;
+    }
+
+    /**
+     * Get img
+     *
+     * @return Doctrine\Common\Collections\Collection
+     */
+    public function getImg()
+    {
+        return $this->img;
     }
 }

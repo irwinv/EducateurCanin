@@ -8,9 +8,17 @@ img{
 }
 
 body{
-	font-family:"Times New Roman",Georgia,Serif;
+	font-family:Arial;
 	background:#243103;
 	color:#fff;
+}
+
+ul{
+	list-style-type:none;
+}
+
+div.clear{
+	clear:both;
 }
 
 div#document{
@@ -38,5 +46,81 @@ div#header div#logo {
 	height:51px;
 }
 
-/*MENU DEROULANT*/
+/* CONTAINER PRINCIPAL DYNAMIQUE */
 
+div#container{
+	width:801px;
+	margin:15px auto;
+	background:#fff;
+	padding:15px 0px 15px 0px;
+}
+
+div#container div#calque_marron{
+	width:780px;
+	height:100%;
+	margin:0 auto;
+	background:#482722;
+}
+
+div#accueil{
+	float:left;
+	width:100%;
+}
+
+div#accueil div#accueil_gauche{
+	width:320px;
+	float:left;
+}
+
+div #accueil div#accueil_droite{
+	width:400px;
+	float::left;
+}
+
+div#accueil div#accueil_droite img{
+	width:383px;
+	height:489px;
+	float:left;
+}
+
+/*Liste des chiens*/
+
+div#liste_des_chiens{
+	width:750px;
+}
+
+div#liste_des_chiens div#bouet_ul{
+	width:685px;
+	margin:0 auto;
+}
+
+div#liste_des_chiens div#bouet_ul ul{
+	width:340px;
+	height:100%;
+	float:left;
+}
+
+div#liste_des_chiens div#bouet_ul ul li{
+	display:in-line;
+}
+
+div#liste_des_chiens div#bouet_ul ul li div.bouet{
+	border:1px solid #fff;
+	margin:10px 0px;
+	height:140px;
+	float:left;
+}
+
+div#liste_des_chiens div#bouet_ul ul li div.thumb{
+	border:1px solid #fff;
+	width:120px;
+	height:140px;
+	float:left;
+}
+
+div#liste_des_chiens div#bouet_ul ul li div.details{
+	margin-left:3px;
+	width:210px;
+	height:140px;
+	float:left;
+}

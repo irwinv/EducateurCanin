@@ -26,13 +26,15 @@
 	position: relative;
 	display: inline-block;
 	list-style: none;
-	background: transparent url(/Elevage/web/bundles/patrickelevage/images/menu/separator.png) scroll left center no-repeat;
+	margin-left:1px;
 }
 .juizdropdown li.first { background: none; }
 .juizdropdown a {
 	display: inline-block;
 	padding: 0 20px 0 22px;
 	color: #fff;
+	font-family:Arial;
+	font-weight:bold;
 	border: 0 none;
 	text-decoration: none;
 	outline: 0 none;
@@ -51,12 +53,8 @@
 	position: absolute;
 	padding:0;
 	display: none;
-	width: 150px;
+	width: 220px;
 	height: auto;
-	background: rgb(212,212,212);
-	background: rgba(212,212,212,0.95);
-	background-image: none;
-	border: 1px solid #c0c0c0;
 	border-top: 0;
 	text-transform: capitalize;
 

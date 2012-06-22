@@ -2,9 +2,41 @@
 
 {% block body %}
 	<p>{{ msg }}</p>
-	<ul>
-	{% for chien in chiens %}
-		<li>{{ chien.titre }} {{ chien.nom }} {{ chien.sexe }}</li>
-	{% endfor %}
-	</ul>
+	<div id="liste_des_chiens">
+		<div id="bouet_ul">
+			<ul>
+			{% for chien in chiens %}
+				{% if chien.sexe =="M" %}
+				<li>
+					<div class="bouet">
+						<div class="thumb"></div>
+						<div class="details">
+							<strong>{{ chien.titre }}</strong>
+							<p>{{ chien.nom }} </p>
+							<p>{{ chien.sexe }}</p>
+						</div>
+					</div>
+				</li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+			<ul>
+			{% for chien in chiens %}
+				{% if chien.sexe == "F" %}
+				<li>
+					<div class="bouet">
+						<div class="thumb"></div>
+						<div class="details">
+							<strong>{{ chien.titre }}</strong>
+							<p>{{ chien.nom }} </p>
+							<p>{{ chien.sexe }}</p>
+						</div>
+					</div>
+				</li>
+				{% endif %}
+			{% endfor %}
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
 {% endblock body %}

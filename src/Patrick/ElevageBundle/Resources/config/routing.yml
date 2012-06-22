@@ -7,5 +7,5 @@ elevage_ajout:
     defaults: { _controller: PatrickElevageBundle:Chiens:ajout }
 
 elevage_chiens:
-    pattern:  /chien/race/{id}
+    pattern:  /chien/race/{id}/chiot/{chiot}
     defaults: { _controller: PatrickElevageBundle:Chiens:show }

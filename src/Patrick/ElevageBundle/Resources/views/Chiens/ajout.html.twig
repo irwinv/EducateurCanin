@@ -1,8 +1,10 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-	<form action="#" {{ form_enctype(form) }} method="POST">
+	<form action="#" {{ form_enctype(form) }} method="POST" enctype="multipart/form-data">
 		{{ form_widget(form) }}
+		<p>AJouter une image</p>
+		<input type="file" name="img" /><br />
 		<input type="submit" value="Enregistrer" />
 		{{ form_rest(form) }}
 	</form>

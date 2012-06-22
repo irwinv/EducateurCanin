@@ -158,7 +158,7 @@ class appdevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             }
 
             // elevage_chiens
-            if (0 === strpos($pathinfo, '/elevage/chien/race') && preg_match('#^/elevage/chien/race/(?P<id>[^/]+?)$#xs', $pathinfo, $matches)) {
+            if (0 === strpos($pathinfo, '/elevage/chien/race') && preg_match('#^/elevage/chien/race/(?P<id>[^/]+?)/chiot/(?P<chiot>[^/]+?)$#xs', $pathinfo, $matches)) {
                 return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::showAction',)), array('_route' => 'elevage_chiens'));
             }
 

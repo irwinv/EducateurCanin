@@ -58,35 +58,51 @@ class __TwigTemplate_19dabab6799097dadf77f235b61dfe88 extends Twig_Template
         echo "\">Accueil</a></li>
 \t\t\t\t\t<li><a href=\"";
         // line 24
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_chiens", array("id" => 1)), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_chiens", array("id" => 1, "chiot" => 0)), "html", null, true);
         echo "\">Bergers du Caucase</a>
 \t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t<li><a href=\"#print\">Mes Chiens</a></li>
-\t\t\t\t\t\t\t<li><a href=\"#web\">Chiots</a></li>
+\t\t\t\t\t\t\t<li><a href=\"";
+        // line 26
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_chiens", array("id" => 1, "chiot" => 0)), "html", null, true);
+        echo "\">Mes Chiens</a></li>
+\t\t\t\t\t\t\t<li><a href=\"";
+        // line 27
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_chiens", array("id" => 1, "chiot" => 1)), "html", null, true);
+        echo "\">Chiots</a></li>
 \t\t\t\t\t\t\t<li><a href=\"#marketing\">Concours</a></li>
 \t\t\t\t\t\t</ul>
 \t\t\t\t\t</li>
 \t\t\t\t\t<li><a href=\"";
         // line 31
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_chiens", array("id" => 2)), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_chiens", array("id" => 2, "chiot" => 0)), "html", null, true);
         echo "\">Bergers d'Asie Centrale</a>
 \t\t\t\t\t\t<ul>
-\t\t\t\t\t\t\t<li><a href=\"#print\">Mes Chiens</a></li>
-\t\t\t\t\t\t\t<li><a href=\"#web\">Chiots</a></li>
+\t\t\t\t\t\t\t<li><a href=\"";
+        // line 33
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_chiens", array("id" => 2, "chiot" => 0)), "html", null, true);
+        echo "\">Mes Chiens</a></li>
+\t\t\t\t\t\t\t<li><a href=\"";
+        // line 34
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_chiens", array("id" => 2, "chiot" => 1)), "html", null, true);
+        echo "\">Chiots</a></li>
 \t\t\t\t\t\t\t<li><a href=\"#marketing\">Concours</a></li>
 \t\t\t\t\t\t</ul>
 \t\t\t\t\t</li>
 \t\t\t\t\t<li><a href=\"#contact\">Contactez nous</a></li>
 \t\t\t\t</ul>
 \t\t\t</div>
-\t\t\t";
-        // line 41
+\t\t\t<div id=\"container\">
+\t\t\t\t<div id=\"calque_marron\">
+\t\t\t\t\t";
+        // line 43
         $this->displayBlock('body', $context, $blocks);
-        // line 42
-        echo "\t\t</div>
+        // line 44
+        echo "\t\t\t\t</div>
+\t\t\t</div>
+\t\t</div>
 
 \t\t<script type=\"text/javascript\" src=\"";
-        // line 44
+        // line 48
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/patrickelevage/js/menu.js"), "html", null, true);
         echo "\"></script>
 \t\t<script type=\"text/javascript\">
@@ -108,7 +124,7 @@ class __TwigTemplate_19dabab6799097dadf77f235b61dfe88 extends Twig_Template
         echo "Elevage Les Vigilants - Sartrouville 78500";
     }
 
-    // line 41
+    // line 43
     public function block_body($context, array $blocks = array())
     {
     }

@@ -21,24 +21,28 @@
 			<div id="nav">
 				<ul id="menu">
 					<li><a href="{{ path('elevage_accueil') }}">Accueil</a></li>
-					<li><a href="{{ path('elevage_chiens', {'id' : 1 }) }}">Bergers du Caucase</a>
+					<li><a href="{{ path('elevage_chiens', {'id' : 1, 'chiot' : 0 }) }}">Bergers du Caucase</a>
 						<ul>
-							<li><a href="#print">Mes Chiens</a></li>
-							<li><a href="#web">Chiots</a></li>
+							<li><a href="{{ path('elevage_chiens', {'id' : 1, 'chiot' : 0 }) }}">Mes Chiens</a></li>
+							<li><a href="{{ path('elevage_chiens', {'id' : 1, 'chiot' : 1 }) }}">Chiots</a></li>
 							<li><a href="#marketing">Concours</a></li>
 						</ul>
 					</li>
-					<li><a href="{{ path('elevage_chiens', {'id' : 2 }) }}">Bergers d'Asie Centrale</a>
+					<li><a href="{{ path('elevage_chiens', {'id' : 2, 'chiot' : 0 }) }}">Bergers d'Asie Centrale</a>
 						<ul>
-							<li><a href="#print">Mes Chiens</a></li>
-							<li><a href="#web">Chiots</a></li>
+							<li><a href="{{ path('elevage_chiens', {'id' : 2, 'chiot' : 0 }) }}">Mes Chiens</a></li>
+							<li><a href="{{ path('elevage_chiens', {'id' : 2, 'chiot' : 1 }) }}">Chiots</a></li>
 							<li><a href="#marketing">Concours</a></li>
 						</ul>
 					</li>
 					<li><a href="#contact">Contactez nous</a></li>
 				</ul>
 			</div>
-			{% block body %}{% endblock %}
+			<div id="container">
+				<div id="calque_marron">
+					{% block body %}{% endblock %}
+				</div>
+			</div>
 		</div>
 
 		<script type="text/javascript" src="{{ asset('bundles/patrickelevage/js/menu.js') }}"></script>

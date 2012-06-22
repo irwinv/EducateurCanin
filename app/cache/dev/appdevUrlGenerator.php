@@ -171,6 +171,6 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
 
     private function getelevage_chiensRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::showAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  1 =>   array (    0 => 'text',    1 => '/elevage/chien/race',  ),));
+        return array(array (  0 => 'id',  1 => 'chiot',), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::showAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'chiot',  ),  1 =>   array (    0 => 'text',    1 => '/chiot',  ),  2 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  3 =>   array (    0 => 'text',    1 => '/elevage/chien/race',  ),));
     }
 }
