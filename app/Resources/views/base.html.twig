@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <title>{% block title %}Elevage Les Vigilants - Sartrouville 78500{% endblock %}</title>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
-        {% include '::css.html.twig' %}
-        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{% block title %}Elevage Les Vigilants - Sartrouville 78500{% endblock %}</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="{{ asset('bundles/patrickelevage/js/lightbox.js') }}"></script>
+		{% include '::css.html.twig' %}
+		<link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
 		<div id="document">
@@ -25,14 +26,14 @@
 						<ul>
 							<li><a href="{{ path('elevage_chiens', {'race' : 1, 'chiot' : 0 }) }}">Mes Chiens</a></li>
 							<li><a href="{{ path('elevage_chiens', {'race' : 1, 'chiot' : 1 }) }}">Chiots</a></li>
-							<li><a href="#marketing">Concours</a></li>
+							<li><a href="{{ path('elevage_concour_chiens', {'race' : 1}) }}">Concours</a></li>
 						</ul>
 					</li>
 					<li><a href="{{ path('elevage_chiens', {'race' : 2, 'chiot' : 0 }) }}">Bergers d'Asie Centrale</a>
 						<ul>
 							<li><a href="{{ path('elevage_chiens', {'race' : 2, 'chiot' : 0 }) }}">Mes Chiens</a></li>
 							<li><a href="{{ path('elevage_chiens', {'race' : 2, 'chiot' : 1 }) }}">Chiots</a></li>
-							<li><a href="#marketing">Concours</a></li>
+							<li><a href="{{ path('elevage_concour_chiens', {'race' : 2}) }}">Concours</a></li>
 						</ul>
 					</li>
 					<li><a href="{{ path('elevage_contact') }}">Contactez nous</a></li>
@@ -48,6 +49,7 @@
 					{% block body %}{% endblock %}
 				</div>
 			</div>
+			<div id="footer"></div>
 		</div>
 
 		<script type="text/javascript" src="{{ asset('bundles/patrickelevage/js/menu.js') }}"></script>

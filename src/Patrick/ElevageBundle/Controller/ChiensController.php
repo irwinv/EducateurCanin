@@ -69,16 +69,16 @@ class ChiensController extends ContainerAware
 				//OneToMany
 				$chiens->addImages($img);
 
+				//Faire la relation entre les 2 tables
+				$img->setChien($chiens);
+
+				$em->persist($img);
+
 				$request->files->get('img')->move($path, $file);
 
 				ChiensController::PowerFullResizer($path.'/'.$file, 120, $thumbpath.'/thumb_'.$file);
 
 			}
-
-			//Faire la relation entre les 2 tables
-			$img->setChien($chiens);
-
-			$em->persist($img);
 
 			//Enregistrement du chien
 			$em->persist($chiens);

@@ -43,10 +43,19 @@ class Images
      */
     private $chien;
 
+	/**
+     * @var string $concour
+     *
+     * @ORM\ManyToOne(targetEntity="Chiens", inversedBy="imgconcours", cascade={"all"})
+     * @ORM\JoinColumn(name="concour_id", referencedColumnName="id")
+     */
+    private $concour;
+
+
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -66,7 +75,7 @@ class Images
     /**
      * Get img
      *
-     * @return string
+     * @return string 
      */
     public function getImg()
     {
@@ -86,7 +95,7 @@ class Images
     /**
      * Get thumb
      *
-     * @return string
+     * @return string 
      */
     public function getThumb()
     {
@@ -106,10 +115,30 @@ class Images
     /**
      * Get chien
      *
-     * @return Patrick\ElevageBundle\Entity\Chiens
+     * @return Patrick\ElevageBundle\Entity\Chiens 
      */
     public function getChien()
     {
         return $this->chien;
+    }
+
+    /**
+     * Set concour
+     *
+     * @param Patrick\ElevageBundle\Entity\Chiens $concour
+     */
+    public function setConcour(\Patrick\ElevageBundle\Entity\Chiens $concour)
+    {
+        $this->concour = $concour;
+    }
+
+    /**
+     * Get concour
+     *
+     * @return Patrick\ElevageBundle\Entity\Chiens 
+     */
+    public function getConcour()
+    {
+        return $this->concour;
     }
 }

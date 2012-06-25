@@ -37,6 +37,9 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        'elevage_accueil' => true,
        'elevage_ajouter' => true,
        'elevage_modifier' => true,
+       'elevage_concour_ajouter' => true,
+       'elevage_concour_modifier' => true,
+       'elevage_concour_chiens' => true,
        'elevage_chiens' => true,
        'elevage_contact' => true,
        'fos_user_security_login' => true,
@@ -183,96 +186,111 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
 
     private function getelevage_accueilRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/',  ),));
+        return array(array (), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/',  ),));
     }
 
     private function getelevage_ajouterRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/admin/ajout',  ),));
+        return array(array (), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/ajout',  ),));
     }
 
     private function getelevage_modifierRouteInfo()
     {
-        return array(array (  0 => 'id',), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::editAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  1 =>   array (    0 => 'text',    1 => '/elevage/admin/modifier',  ),));
+        return array(array (  0 => 'id',), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::editAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  1 =>   array (    0 => 'text',    1 => '/admin/modifier',  ),));
+    }
+
+    private function getelevage_concour_ajouterRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ConcoursController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/admin/ajout/concour',  ),));
+    }
+
+    private function getelevage_concour_modifierRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ConcoursController::editAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  1 =>   array (    0 => 'text',    1 => '/admin/modifier/concour',  ),));
+    }
+
+    private function getelevage_concour_chiensRouteInfo()
+    {
+        return array(array (  0 => 'race',), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ConcoursController::showAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'race',  ),  1 =>   array (    0 => 'text',    1 => '/concour/race',  ),));
     }
 
     private function getelevage_chiensRouteInfo()
     {
-        return array(array (  0 => 'race',  1 => 'chiot',), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::showAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'chiot',  ),  1 =>   array (    0 => 'text',    1 => '/chiot',  ),  2 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'race',  ),  3 =>   array (    0 => 'text',    1 => '/elevage/chien/race',  ),));
+        return array(array (  0 => 'race',  1 => 'chiot',), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::showAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'chiot',  ),  1 =>   array (    0 => 'text',    1 => '/chiot',  ),  2 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'race',  ),  3 =>   array (    0 => 'text',    1 => '/chien/race',  ),));
     }
 
     private function getelevage_contactRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\DefaultController::contactAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/contact',  ),));
+        return array(array (), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\DefaultController::contactAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/contact',  ),));
     }
 
     private function getfos_user_security_loginRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/login',  ),));
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/login',  ),));
     }
 
     private function getfos_user_security_checkRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::checkAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/login_check',  ),));
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::checkAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/login_check',  ),));
     }
 
     private function getfos_user_security_logoutRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::logoutAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/logout',  ),));
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::logoutAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/logout',  ),));
     }
 
     private function getfos_user_profile_showRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::showAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/elevage/profile/',  ),));
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::showAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/profile/',  ),));
     }
 
     private function getfos_user_profile_editRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/profile/edit',  ),));
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/profile/edit',  ),));
     }
 
     private function getfos_user_registration_registerRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::registerAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/register/',  ),));
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::registerAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/register/',  ),));
     }
 
     private function getfos_user_registration_check_emailRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::checkEmailAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/elevage/register/check-email',  ),));
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::checkEmailAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/register/check-email',  ),));
     }
 
     private function getfos_user_registration_confirmRouteInfo()
     {
-        return array(array (  0 => 'token',), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'token',  ),  1 =>   array (    0 => 'text',    1 => '/elevage/register/confirm',  ),));
+        return array(array (  0 => 'token',), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'token',  ),  1 =>   array (    0 => 'text',    1 => '/register/confirm',  ),));
     }
 
     private function getfos_user_registration_confirmedRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmedAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/elevage/register/confirmed',  ),));
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmedAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/register/confirmed',  ),));
     }
 
     private function getfos_user_resetting_requestRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::requestAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/elevage/resetting/request',  ),));
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::requestAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/resetting/request',  ),));
     }
 
     private function getfos_user_resetting_send_emailRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::sendEmailAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/elevage/resetting/send-email',  ),));
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::sendEmailAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/resetting/send-email',  ),));
     }
 
     private function getfos_user_resetting_check_emailRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::checkEmailAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/elevage/resetting/check-email',  ),));
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::checkEmailAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/resetting/check-email',  ),));
     }
 
     private function getfos_user_resetting_resetRouteInfo()
     {
-        return array(array (  0 => 'token',), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::resetAction',), array (  '_method' => 'GET|POST',), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'token',  ),  1 =>   array (    0 => 'text',    1 => '/elevage/resetting/reset',  ),));
+        return array(array (  0 => 'token',), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::resetAction',), array (  '_method' => 'GET|POST',), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'token',  ),  1 =>   array (    0 => 'text',    1 => '/resetting/reset',  ),));
     }
 
     private function getfos_user_change_passwordRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',), array (  '_method' => 'GET|POST',), array (  0 =>   array (    0 => 'text',    1 => '/elevage/change-password/change-password',  ),));
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',), array (  '_method' => 'GET|POST',), array (  0 =>   array (    0 => 'text',    1 => '/change-password/change-password',  ),));
     }
 }

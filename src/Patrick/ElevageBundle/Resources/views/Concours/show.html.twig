@@ -1,0 +1,29 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+	<p>{{ msg }}</p>
+	<div id="liste_des_chiens">
+		<div id="bouet_ul">
+			<ul>
+			{% for concour in concours %}
+				<li>
+					<div class="bouet">
+						<div class="thumb">
+							<a href="/uploads/{{ concour.img}}" rel="lightbox">
+								<img src="/uploads/thumbs/{{ concour.thumb}}" alt="{{ concour.titre }}" title="{{ concour.titre }}" />
+							</a>
+						</div>
+						<div class="details">
+							<strong>{{ concour.titre }}</strong>
+							{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+								<div class="btn_modif"><a href="{{ path('elevage_concour_modifier', {'id' : concour.idc }) }}">Modifier</a></div>
+							{% endif %}
+						</div>
+					</div>
+				</li>
+			{% endfor %}
+			</ul>
+			<div class="clear"></div>
+		</div>
+	</div>
+{% endblock body %}

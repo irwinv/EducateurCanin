@@ -66,11 +66,11 @@ class Chiens
     {
         $this->img = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
+    
     /**
      * Get id
      *
-     * @return integer
+     * @return integer 
      */
     public function getId()
     {
@@ -90,7 +90,7 @@ class Chiens
     /**
      * Get nom
      *
-     * @return string
+     * @return string 
      */
     public function getNom()
     {
@@ -110,7 +110,7 @@ class Chiens
     /**
      * Get sexe
      *
-     * @return string
+     * @return string 
      */
     public function getSexe()
     {
@@ -130,7 +130,7 @@ class Chiens
     /**
      * Get chiot
      *
-     * @return integer
+     * @return integer 
      */
     public function getChiot()
     {
@@ -150,7 +150,7 @@ class Chiens
     /**
      * Get titre
      *
-     * @return string
+     * @return string 
      */
     public function getTitre()
     {
@@ -170,7 +170,7 @@ class Chiens
     /**
      * Get race
      *
-     * @return integer
+     * @return integer 
      */
     public function getRace()
     {
@@ -190,7 +190,7 @@ class Chiens
     /**
      * Get img
      *
-     * @return Doctrine\Common\Collections\Collection
+     * @return Doctrine\Common\Collections\Collection 
      */
     public function getImg()
     {

@@ -1,0 +1,44 @@
+<?php
+
+namespace Patrick\ElevageBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Patrick\ElevageBundle\Entity\Chiens
+ *
+ * @ORM\Table()
+ * @ORM\Entity
+ */
+class Concours
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string $titre
+     *
+     * @ORM\Column(name="titre", type="string", length=100)
+     */
+    private $titre;
+
+    /**
+     * @var integer $race
+     *
+     * @ORM\Column(name="race", type="integer")
+     */
+    private $race;
+
+	/**
+	* @ORM\OneToMany(targetEntity="ImagesConcours", mappedBy="concour", cascade={"all"})
+	*
+	*/
+	private $imgconcours;
+
+}

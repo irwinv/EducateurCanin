@@ -36,7 +36,7 @@ div#header{
 
 div#header div#banner {
 	margin:0 auto;
-	background: transparent url(/Elevage/web/bundles/patrickelevage/images/banner.gif) no-repeat center top;
+	background: transparent url(/bundles/patrickelevage/images/banner.gif) no-repeat center top;
 	width:801px;
 	height:129px;
 }
@@ -131,9 +131,11 @@ div#liste_des_chiens div#bouet_ul ul li{
 }
 
 div#liste_des_chiens div#bouet_ul ul li div.bouet{
-	border:1px solid #fff;
+	border:1px solid #000;
+	background:#fff;
+	color:#000;
 	margin:10px 0px;
-	height:140px;
+	height:160px;
 	float:left;
 }
 
@@ -177,4 +179,14 @@ div#contact_infos{
 
 div#contact_infos p{
 	margin-bottom:15px;
+}
+
+div#contact_infos div#bgfblike{
+	background:#fff;
+}
+
+div#footer{
+	background:#fff;
+	width:801px;
+	margin:0 auto;
 }

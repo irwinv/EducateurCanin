@@ -25,23 +25,27 @@ class __TwigTemplate_2c663de934abd096798fe739b09ac482 extends Twig_Template
         // line 6
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_ajouter"), "html", null, true);
         echo " \">Ajouter un chien</a></li>
+\t\t<li><a href=\"";
+        // line 7
+        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_concour_ajouter"), "html", null, true);
+        echo " \">Ajouter un concour</a></li>
 \t\t<li>Voir et modifier les :</li>
 \t\t<li><strong>Bergers de Caucases : </strong></li>
 \t\t<li><a href=\"";
-        // line 9
+        // line 10
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_chiens", array("race" => 1, "chiot" => 0)), "html", null, true);
         echo "\">Mes Chiens</a></li>
 \t\t<li><a href=\"";
-        // line 10
+        // line 11
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_chiens", array("race" => 1, "chiot" => 1)), "html", null, true);
         echo "\">Chiots</a></li>
 \t\t<li><strong>Bergers d'Asie Centrale : </strong></li>
 \t\t<li><a href=\"";
-        // line 12
+        // line 13
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_chiens", array("race" => 2, "chiot" => 0)), "html", null, true);
         echo "\">Mes Chiens</a></li>
 \t\t<li><a href=\"";
-        // line 13
+        // line 14
         echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_chiens", array("race" => 2, "chiot" => 1)), "html", null, true);
         echo "\">Chiots</a></li>
 \t</ul>

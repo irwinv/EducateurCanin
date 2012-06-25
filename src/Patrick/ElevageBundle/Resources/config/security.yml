@@ -8,14 +8,14 @@ security:
             pattern:      .*
             form_login:
                 provider:       fos_userbundle
-                login_path:     /elevage/login
+                login_path:     /login
                 use_forward:    false
-                check_path:     /elevage/login_check
+                check_path:     /login_check
                 failure_path:   null
-                default_target_path: /elevage
+                default_target_path: /
             logout:
-                path:   /elevage/logout
-                target: /elevage
+                path:   /logout
+                target: /
             anonymous:    true
 
     role_hierarchy:
@@ -37,10 +37,10 @@ security:
         - { path: ^/resseting$, role: IS_AUTHENTICATED_ANONYMOUSLY }
 
         # PAGES ACCESSIBLES AUX ADMINISTRATEURS
-        - { path: ^/elevage/admin/, role: ROLE_ADMIN }
+        - { path: ^/admin/, role: ROLE_ADMIN }
 
         # PAGES ACCESSIBLES AUX UTILISATEURS CONNECTES
-        - { path: ^/elevage/register, role: ROLE_USER }
+        - { path: ^/register, role: ROLE_USER }
 
         # PAGES ACCESSIBLES À TOUS
-        - { path: ^/elevage.*, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/.*, role: IS_AUTHENTICATED_ANONYMOUSLY }

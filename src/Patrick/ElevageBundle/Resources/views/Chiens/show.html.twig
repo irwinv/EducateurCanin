@@ -10,12 +10,14 @@
 				<li>
 					<div class="bouet">
 						<div class="thumb">
-							<img src="/Elevage/web/uploads/thumbs/{{ chien.thumb}}" alt="{{ chien.titre }}" title="{{ chien.titre }}" />
+							<a href="/uploads/{{ chien.img}}" rel="lightbox">
+								<img src="/uploads/thumbs/{{ chien.thumb}}" alt="{{ chien.titre }}" title="{{ chien.titre }}" />
+							</a>
 						</div>
 						<div class="details">
-							<strong>{{ chien.titre }}</strong>
+							<strong>{{ chien.titre }} {{ app.request.get('race') }}</strong>
 							<p>{{ chien.nom }} </p>
-							<p>{{ chien.sexe }}</p>
+							<p><img src="/bundles/patrickelevage/images/icon/male.png" /></p>
 							{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 								<div class="btn_modif"><a href="{{ path('elevage_modifier', {'id' : chien.idc }) }}">Modifier</a></div>
 							{% endif %}
@@ -31,12 +33,14 @@
 				<li>
 					<div class="bouet">
 						<div class="thumb">
-							<img src="/Elevage/web/uploads/thumbs/{{ chien.thumb }}" alt="{{ chien.titre }}" title="{{ chien.titre }}" />
+							<a href="/uploads/{{ chien.img}}" rel="lightbox">
+								<img src="/uploads/thumbs/{{ chien.thumb}}" alt="{{ chien.titre }}" title="{{ chien.titre }}" />
+							</a>
 						</div>
 						<div class="details">
 							<strong>{{ chien.titre }}</strong>
 							<p>{{ chien.nom }} </p>
-							<p>{{ chien.sexe }}</p>
+							<p><img src="/bundles/patrickelevage/images/icon/female.png" /></p>
 							{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 								<div class="btn_modif"><a href="{{ path('elevage_modifier', {'id' : chien.idc }) }}">Modifier</a></div>
 							{% endif %}

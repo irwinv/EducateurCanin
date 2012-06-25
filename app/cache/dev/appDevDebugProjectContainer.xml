@@ -1247,7 +1247,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>4fe59d7656b01</argument>
+            <argument>4fe8deac814ec</argument>
           </service>
         </argument>
       </argument>
@@ -1407,7 +1407,7 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/elevage/admin/</argument>
+                      <argument>^/admin/</argument>
                     </service>
                   </argument>
                   <argument type="collection">
@@ -1418,7 +1418,7 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/elevage/register</argument>
+                      <argument>^/register</argument>
                     </service>
                   </argument>
                   <argument type="collection">
@@ -1429,7 +1429,7 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/elevage.*</argument>
+                      <argument>^/.*</argument>
                     </service>
                   </argument>
                   <argument type="collection">
@@ -1464,8 +1464,8 @@
                 <argument type="service" id="router"/>
               </service>
             </argument>
-            <argument>/elevage/logout</argument>
-            <argument>/elevage</argument>
+            <argument>/logout</argument>
+            <argument>/</argument>
             <argument>null</argument>
             <call method="addHandler">
               <argument type="service">
@@ -1491,10 +1491,10 @@
             </argument>
             <argument>main</argument>
             <argument type="collection">
-              <argument key="check_path">/elevage/login_check</argument>
-              <argument key="login_path">/elevage/login</argument>
+              <argument key="check_path">/login_check</argument>
+              <argument key="login_path">/login</argument>
               <argument key="use_forward">false</argument>
-              <argument key="default_target_path">/elevage</argument>
+              <argument key="default_target_path">/</argument>
               <argument key="failure_path">null</argument>
               <argument key="always_use_default_target_path">false</argument>
               <argument key="target_path_parameter">_target_path</argument>
@@ -1515,7 +1515,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument>4fe59d7656b01</argument>
+            <argument>4fe8deac814ec</argument>
             <argument type="service" id="monolog.logger.security"/>
           </service>
         </argument>
@@ -1617,7 +1617,7 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/elevage/admin/</argument>
+                      <argument>^/admin/</argument>
                     </service>
                   </argument>
                   <argument type="collection">
@@ -1628,7 +1628,7 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/elevage/register</argument>
+                      <argument>^/register</argument>
                     </service>
                   </argument>
                   <argument type="collection">
@@ -1639,7 +1639,7 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/elevage.*</argument>
+                      <argument>^/.*</argument>
                     </service>
                   </argument>
                   <argument type="collection">
@@ -1671,7 +1671,7 @@
                   <argument type="service" id="router"/>
                 </service>
               </argument>
-              <argument>/elevage/login</argument>
+              <argument>/login</argument>
               <argument>false</argument>
             </service>
           </argument>
