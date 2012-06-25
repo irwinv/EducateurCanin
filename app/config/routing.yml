@@ -1,3 +1,8 @@
+PatrickUtilisateurBundle:
+    resource: "@PatrickUtilisateurBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 PatrickElevageBundle:
     resource: "@PatrickElevageBundle/Resources/config/routing.yml"
     prefix:   /elevage

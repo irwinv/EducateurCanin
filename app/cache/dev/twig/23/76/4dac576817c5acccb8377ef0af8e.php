@@ -43,71 +43,109 @@ class __TwigTemplate_23764dac576817c5acccb8377ef0af8e extends Twig_Template
                 // line 10
                 echo "\t\t\t\t<li>
 \t\t\t\t\t<div class=\"bouet\">
-\t\t\t\t\t\t<div class=\"thumb\"></div>
+\t\t\t\t\t\t<div class=\"thumb\">
+\t\t\t\t\t\t\t<img src=\"/Elevage/web/uploads/thumbs/";
+                // line 13
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "chien"), "thumb"), "html", null, true);
+                echo "\" alt=\"";
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "chien"), "titre"), "html", null, true);
+                echo "\" title=\"";
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "chien"), "titre"), "html", null, true);
+                echo "\" />
+\t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"details\">
 \t\t\t\t\t\t\t<strong>";
-                // line 14
+                // line 16
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "chien"), "titre"), "html", null, true);
                 echo "</strong>
 \t\t\t\t\t\t\t<p>";
-                // line 15
+                // line 17
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "chien"), "nom"), "html", null, true);
                 echo " </p>
 \t\t\t\t\t\t\t<p>";
-                // line 16
+                // line 18
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "chien"), "sexe"), "html", null, true);
                 echo "</p>
-\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t";
+                // line 19
+                if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+                    // line 20
+                    echo "\t\t\t\t\t\t\t\t<div class=\"btn_modif\"><a href=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_modifier", array("id" => $this->getAttribute($this->getContext($context, "chien"), "idc"))), "html", null, true);
+                    echo "\">Modifier</a></div>
+\t\t\t\t\t\t\t";
+                }
+                // line 22
+                echo "\t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t</li>
 \t\t\t\t";
             }
-            // line 21
+            // line 26
             echo "\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['chien'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 22
+        // line 27
         echo "\t\t\t</ul>
 \t\t\t<ul>
 \t\t\t";
-        // line 24
+        // line 29
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($this->getContext($context, "chiens"));
         foreach ($context['_seq'] as $context["_key"] => $context["chien"]) {
-            // line 25
+            // line 30
             echo "\t\t\t\t";
             if (($this->getAttribute($this->getContext($context, "chien"), "sexe") == "F")) {
-                // line 26
+                // line 31
                 echo "\t\t\t\t<li>
 \t\t\t\t\t<div class=\"bouet\">
-\t\t\t\t\t\t<div class=\"thumb\"></div>
+\t\t\t\t\t\t<div class=\"thumb\">
+\t\t\t\t\t\t\t<img src=\"/Elevage/web/uploads/thumbs/";
+                // line 34
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "chien"), "thumb"), "html", null, true);
+                echo "\" alt=\"";
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "chien"), "titre"), "html", null, true);
+                echo "\" title=\"";
+                echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "chien"), "titre"), "html", null, true);
+                echo "\" />
+\t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"details\">
 \t\t\t\t\t\t\t<strong>";
-                // line 30
+                // line 37
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "chien"), "titre"), "html", null, true);
                 echo "</strong>
 \t\t\t\t\t\t\t<p>";
-                // line 31
+                // line 38
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "chien"), "nom"), "html", null, true);
                 echo " </p>
 \t\t\t\t\t\t\t<p>";
-                // line 32
+                // line 39
                 echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "chien"), "sexe"), "html", null, true);
                 echo "</p>
-\t\t\t\t\t\t</div>
+\t\t\t\t\t\t\t";
+                // line 40
+                if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
+                    // line 41
+                    echo "\t\t\t\t\t\t\t\t<div class=\"btn_modif\"><a href=\"";
+                    echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_modifier", array("id" => $this->getAttribute($this->getContext($context, "chien"), "idc"))), "html", null, true);
+                    echo "\">Modifier</a></div>
+\t\t\t\t\t\t\t";
+                }
+                // line 43
+                echo "\t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t</li>
 \t\t\t\t";
             }
-            // line 37
+            // line 47
             echo "\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['chien'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 38
+        // line 48
         echo "\t\t\t</ul>
 \t\t\t<div class=\"clear\"></div>
 \t\t</div>

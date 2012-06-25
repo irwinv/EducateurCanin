@@ -33,9 +33,26 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
        '_configurator_home' => true,
        '_configurator_step' => true,
        '_configurator_final' => true,
+       'patrick_utilisateur_default_index' => true,
        'elevage_accueil' => true,
-       'elevage_ajout' => true,
+       'elevage_ajouter' => true,
+       'elevage_modifier' => true,
        'elevage_chiens' => true,
+       'elevage_contact' => true,
+       'fos_user_security_login' => true,
+       'fos_user_security_check' => true,
+       'fos_user_security_logout' => true,
+       'fos_user_profile_show' => true,
+       'fos_user_profile_edit' => true,
+       'fos_user_registration_register' => true,
+       'fos_user_registration_check_email' => true,
+       'fos_user_registration_confirm' => true,
+       'fos_user_registration_confirmed' => true,
+       'fos_user_resetting_request' => true,
+       'fos_user_resetting_send_email' => true,
+       'fos_user_resetting_check_email' => true,
+       'fos_user_resetting_reset' => true,
+       'fos_user_change_password' => true,
     );
 
     /**
@@ -159,18 +176,103 @@ class appdevUrlGenerator extends Symfony\Component\Routing\Generator\UrlGenerato
         return array(array (), array (  '_controller' => 'Sensio\\Bundle\\DistributionBundle\\Controller\\ConfiguratorController::finalAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/_configurator/final',  ),));
     }
 
+    private function getpatrick_utilisateur_default_indexRouteInfo()
+    {
+        return array(array (  0 => 'name',), array (  '_controller' => 'Patrick\\UtilisateurBundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'name',  ),  1 =>   array (    0 => 'text',    1 => '/hello',  ),));
+    }
+
     private function getelevage_accueilRouteInfo()
     {
         return array(array (), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\DefaultController::indexAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/',  ),));
     }
 
-    private function getelevage_ajoutRouteInfo()
+    private function getelevage_ajouterRouteInfo()
     {
-        return array(array (), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::ajoutAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/ajout',  ),));
+        return array(array (), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/admin/ajout',  ),));
+    }
+
+    private function getelevage_modifierRouteInfo()
+    {
+        return array(array (  0 => 'id',), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::editAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  1 =>   array (    0 => 'text',    1 => '/elevage/admin/modifier',  ),));
     }
 
     private function getelevage_chiensRouteInfo()
     {
-        return array(array (  0 => 'id',  1 => 'chiot',), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::showAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'chiot',  ),  1 =>   array (    0 => 'text',    1 => '/chiot',  ),  2 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'id',  ),  3 =>   array (    0 => 'text',    1 => '/elevage/chien/race',  ),));
+        return array(array (  0 => 'race',  1 => 'chiot',), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::showAction',), array (), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'chiot',  ),  1 =>   array (    0 => 'text',    1 => '/chiot',  ),  2 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'race',  ),  3 =>   array (    0 => 'text',    1 => '/elevage/chien/race',  ),));
+    }
+
+    private function getelevage_contactRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\DefaultController::contactAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/contact',  ),));
+    }
+
+    private function getfos_user_security_loginRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/login',  ),));
+    }
+
+    private function getfos_user_security_checkRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::checkAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/login_check',  ),));
+    }
+
+    private function getfos_user_security_logoutRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::logoutAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/logout',  ),));
+    }
+
+    private function getfos_user_profile_showRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::showAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/elevage/profile/',  ),));
+    }
+
+    private function getfos_user_profile_editRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::editAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/profile/edit',  ),));
+    }
+
+    private function getfos_user_registration_registerRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::registerAction',), array (), array (  0 =>   array (    0 => 'text',    1 => '/elevage/register/',  ),));
+    }
+
+    private function getfos_user_registration_check_emailRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::checkEmailAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/elevage/register/check-email',  ),));
+    }
+
+    private function getfos_user_registration_confirmRouteInfo()
+    {
+        return array(array (  0 => 'token',), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'token',  ),  1 =>   array (    0 => 'text',    1 => '/elevage/register/confirm',  ),));
+    }
+
+    private function getfos_user_registration_confirmedRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmedAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/elevage/register/confirmed',  ),));
+    }
+
+    private function getfos_user_resetting_requestRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::requestAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/elevage/resetting/request',  ),));
+    }
+
+    private function getfos_user_resetting_send_emailRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::sendEmailAction',), array (  '_method' => 'POST',), array (  0 =>   array (    0 => 'text',    1 => '/elevage/resetting/send-email',  ),));
+    }
+
+    private function getfos_user_resetting_check_emailRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::checkEmailAction',), array (  '_method' => 'GET',), array (  0 =>   array (    0 => 'text',    1 => '/elevage/resetting/check-email',  ),));
+    }
+
+    private function getfos_user_resetting_resetRouteInfo()
+    {
+        return array(array (  0 => 'token',), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::resetAction',), array (  '_method' => 'GET|POST',), array (  0 =>   array (    0 => 'variable',    1 => '/',    2 => '[^/]+?',    3 => 'token',  ),  1 =>   array (    0 => 'text',    1 => '/elevage/resetting/reset',  ),));
+    }
+
+    private function getfos_user_change_passwordRouteInfo()
+    {
+        return array(array (), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',), array (  '_method' => 'GET|POST',), array (  0 =>   array (    0 => 'text',    1 => '/elevage/change-password/change-password',  ),));
     }
 }

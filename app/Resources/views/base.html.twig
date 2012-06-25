@@ -21,22 +21,27 @@
 			<div id="nav">
 				<ul id="menu">
 					<li><a href="{{ path('elevage_accueil') }}">Accueil</a></li>
-					<li><a href="{{ path('elevage_chiens', {'id' : 1, 'chiot' : 0 }) }}">Bergers du Caucase</a>
+					<li><a href="{{ path('elevage_chiens', {'race' : 1, 'chiot' : 0 }) }}">Bergers du Caucase</a>
 						<ul>
-							<li><a href="{{ path('elevage_chiens', {'id' : 1, 'chiot' : 0 }) }}">Mes Chiens</a></li>
-							<li><a href="{{ path('elevage_chiens', {'id' : 1, 'chiot' : 1 }) }}">Chiots</a></li>
+							<li><a href="{{ path('elevage_chiens', {'race' : 1, 'chiot' : 0 }) }}">Mes Chiens</a></li>
+							<li><a href="{{ path('elevage_chiens', {'race' : 1, 'chiot' : 1 }) }}">Chiots</a></li>
 							<li><a href="#marketing">Concours</a></li>
 						</ul>
 					</li>
-					<li><a href="{{ path('elevage_chiens', {'id' : 2, 'chiot' : 0 }) }}">Bergers d'Asie Centrale</a>
+					<li><a href="{{ path('elevage_chiens', {'race' : 2, 'chiot' : 0 }) }}">Bergers d'Asie Centrale</a>
 						<ul>
-							<li><a href="{{ path('elevage_chiens', {'id' : 2, 'chiot' : 0 }) }}">Mes Chiens</a></li>
-							<li><a href="{{ path('elevage_chiens', {'id' : 2, 'chiot' : 1 }) }}">Chiots</a></li>
+							<li><a href="{{ path('elevage_chiens', {'race' : 2, 'chiot' : 0 }) }}">Mes Chiens</a></li>
+							<li><a href="{{ path('elevage_chiens', {'race' : 2, 'chiot' : 1 }) }}">Chiots</a></li>
 							<li><a href="#marketing">Concours</a></li>
 						</ul>
 					</li>
-					<li><a href="#contact">Contactez nous</a></li>
+					<li><a href="{{ path('elevage_contact') }}">Contactez nous</a></li>
 				</ul>
+			</div>
+			<div id="breadcrumb">
+				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+					{% include 'PatrickUtilisateurBundle::connexion.html.twig' %}
+				{% endif %}
 			</div>
 			<div id="container">
 				<div id="calque_marron">

@@ -1,0 +1,46 @@
+security:
+    providers:
+        fos_userbundle:
+            id: fos_user.user_manager
+
+    firewalls:
+        main:
+            pattern:      .*
+            form_login:
+                provider:       fos_userbundle
+                login_path:     /elevage/login
+                use_forward:    false
+                check_path:     /elevage/login_check
+                failure_path:   null
+                default_target_path: /elevage
+            logout:
+                path:   /elevage/logout
+                target: /elevage
+            anonymous:    true
+
+    role_hierarchy:
+        ROLE_ADMIN:      ROLE_USER
+        ROLE_SUPERADMIN: ROLE_ADMIN
+
+    encoders:
+            "FOS\UserBundle\Model\UserInterface": sha512
+
+    access_control:
+        # Liste des pages accessibles à tous les utilisateurs (ne pas toucher)
+        - { path: ^/_wdt/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/_profiler/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/js/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/css/, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/login_check$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resseting$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+
+        # PAGES ACCESSIBLES AUX ADMINISTRATEURS
+        - { path: ^/elevage/admin/, role: ROLE_ADMIN }
+
+        # PAGES ACCESSIBLES AUX UTILISATEURS CONNECTES
+        - { path: ^/elevage/register, role: ROLE_USER }
+
+        # PAGES ACCESSIBLES À TOUS
+        - { path: ^/elevage.*, role: IS_AUTHENTICATED_ANONYMOUSLY }

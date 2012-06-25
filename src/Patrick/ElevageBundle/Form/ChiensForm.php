@@ -26,7 +26,8 @@ class ChiensForm extends AbstractType
 						'0' => 'Non'
 					),
 					'expanded' => true,
-					'multiple' => false
+					'multiple' => false,
+					'preferred_choices' => array('0')
 				)
 			)
             ->add('titre', 'text', array('label' => 'Un text à ajouter ...'))

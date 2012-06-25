@@ -61,6 +61,7 @@ class Chiens
 	*
 	*/
 	private $img;
+
     public function __construct()
     {
         $this->img = new \Doctrine\Common\Collections\ArrayCollection();

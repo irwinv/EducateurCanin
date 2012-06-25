@@ -61,4 +61,138 @@ class Chiens
 	*
 	*/
 	private $img;
+    public function __construct()
+    {
+        $this->img = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set nom
+     *
+     * @param string $nom
+     */
+    public function setNom($nom)
+    {
+        $this->nom = $nom;
+    }
+
+    /**
+     * Get nom
+     *
+     * @return string
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Set sexe
+     *
+     * @param string $sexe
+     */
+    public function setSexe($sexe)
+    {
+        $this->sexe = $sexe;
+    }
+
+    /**
+     * Get sexe
+     *
+     * @return string
+     */
+    public function getSexe()
+    {
+        return $this->sexe;
+    }
+
+    /**
+     * Set chiot
+     *
+     * @param integer $chiot
+     */
+    public function setChiot($chiot)
+    {
+        $this->chiot = $chiot;
+    }
+
+    /**
+     * Get chiot
+     *
+     * @return integer
+     */
+    public function getChiot()
+    {
+        return $this->chiot;
+    }
+
+    /**
+     * Set titre
+     *
+     * @param string $titre
+     */
+    public function setTitre($titre)
+    {
+        $this->titre = $titre;
+    }
+
+    /**
+     * Get titre
+     *
+     * @return string
+     */
+    public function getTitre()
+    {
+        return $this->titre;
+    }
+
+    /**
+     * Set race
+     *
+     * @param integer $race
+     */
+    public function setRace($race)
+    {
+        $this->race = $race;
+    }
+
+    /**
+     * Get race
+     *
+     * @return integer
+     */
+    public function getRace()
+    {
+        return $this->race;
+    }
+
+    /**
+     * Add img
+     *
+     * @param Patrick\ElevageBundle\Entity\Images $img
+     */
+    public function addImages(\Patrick\ElevageBundle\Entity\Images $img)
+    {
+        $this->img[] = $img;
+    }
+
+    /**
+     * Get img
+     *
+     * @return Doctrine\Common\Collections\Collection
+     */
+    public function getImg()
+    {
+        return $this->img;
+    }
 }

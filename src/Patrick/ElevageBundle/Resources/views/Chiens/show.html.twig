@@ -9,11 +9,16 @@
 				{% if chien.sexe =="M" %}
 				<li>
 					<div class="bouet">
-						<div class="thumb"></div>
+						<div class="thumb">
+							<img src="/Elevage/web/uploads/thumbs/{{ chien.thumb}}" alt="{{ chien.titre }}" title="{{ chien.titre }}" />
+						</div>
 						<div class="details">
 							<strong>{{ chien.titre }}</strong>
 							<p>{{ chien.nom }} </p>
 							<p>{{ chien.sexe }}</p>
+							{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+								<div class="btn_modif"><a href="{{ path('elevage_modifier', {'id' : chien.idc }) }}">Modifier</a></div>
+							{% endif %}
 						</div>
 					</div>
 				</li>
@@ -25,11 +30,16 @@
 				{% if chien.sexe == "F" %}
 				<li>
 					<div class="bouet">
-						<div class="thumb"></div>
+						<div class="thumb">
+							<img src="/Elevage/web/uploads/thumbs/{{ chien.thumb }}" alt="{{ chien.titre }}" title="{{ chien.titre }}" />
+						</div>
 						<div class="details">
 							<strong>{{ chien.titre }}</strong>
 							<p>{{ chien.nom }} </p>
 							<p>{{ chien.sexe }}</p>
+							{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
+								<div class="btn_modif"><a href="{{ path('elevage_modifier', {'id' : chien.idc }) }}">Modifier</a></div>
+							{% endif %}
 						</div>
 					</div>
 				</li>

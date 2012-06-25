@@ -1,0 +1,15 @@
+<div class="fos_user_user_show">
+	<p>Résumé des informations de connexion</p>
+	<p>{{ 'Login'|trans({}, 'FOSUserBundle') }}: {{ user.username }}</p>
+	<p>{{ 'Mail'|trans({}, 'FOSUserBundle') }}: {{ user.email }}</p></br />
+	<ul>
+		<li><a href="{{ path('elevage_ajouter') }} ">Ajouter un chien</a></li>
+		<li>Voir et modifier les :</li>
+		<li><strong>Bergers de Caucases : </strong></li>
+		<li><a href="{{ path('elevage_chiens', {'race' : 1, 'chiot' : 0 }) }}">Mes Chiens</a></li>
+		<li><a href="{{ path('elevage_chiens', {'race' : 1, 'chiot' : 1 }) }}">Chiots</a></li>
+		<li><strong>Bergers d'Asie Centrale : </strong></li>
+		<li><a href="{{ path('elevage_chiens', {'race' : 2, 'chiot' : 0 }) }}">Mes Chiens</a></li>
+		<li><a href="{{ path('elevage_chiens', {'race' : 2, 'chiot' : 1 }) }}">Chiots</a></li>
+	</ul>
+</div>

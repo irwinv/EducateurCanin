@@ -18,4 +18,8 @@ class DefaultController extends ContainerAware
 			array('message' => $message)
 		);
     }
+
+	public function contactAction(){
+        return $this->container->get('templating')->renderResponse('PatrickElevageBundle:Default:contact.html.twig');
+	}
 }
