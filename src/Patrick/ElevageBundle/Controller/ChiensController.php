@@ -114,7 +114,7 @@ class ChiensController extends ContainerAware
 		");
 
 		if(!$chiens){
-			$msg = "Il y n'y a pas de chien disponible pour cette race";
+			$msg = "Il n'y a pas de chien disponible pour cette race	";
 		}
 
 		return $this->container->get('templating')->renderResponse('PatrickElevageBundle:Chiens:show.html.twig',
