@@ -78,10 +78,22 @@ class PatrickElevageBundleEntityImagesProxy extends \Patrick\ElevageBundle\Entit
         return parent::getChien();
     }
 
+    public function setConcour(\Patrick\ElevageBundle\Entity\Chiens $concour)
+    {
+        $this->__load();
+        return parent::setConcour($concour);
+    }
+
+    public function getConcour()
+    {
+        $this->__load();
+        return parent::getConcour();
+    }
+
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'id', 'img', 'thumb', 'chien');
+        return array('__isInitialized__', 'id', 'img', 'thumb', 'chien', 'concour');
     }
 
     public function __clone()

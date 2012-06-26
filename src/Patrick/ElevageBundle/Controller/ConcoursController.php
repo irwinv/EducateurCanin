@@ -2,8 +2,8 @@
 
 namespace Patrick\ElevageBundle\Controller;
 
-use Symfony\Component\DependencyInjection\ContainerAware,
-       Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 //Entity
 use Patrick\ElevageBundle\Entity\Concours;
@@ -12,14 +12,14 @@ use Patrick\ElevageBundle\Entity\ImagesConcours;
 //Formulaire
 use Patrick\ElevageBundle\Form\ConcoursForm;
 
-class ConcoursController extends ContainerAware
+class ConcoursController extends Controller
 {
 
 	public function editAction($id = null){
 
 		$msg = "";
 
-		$em = $this->container->get('doctrine')->getEntityManager();
+		$em = $this->get('doctrine')->getEntityManager();
 
 		if(isset($id)){
 			$concours = $em->find('PatrickElevageBundle:Concours', $id);
@@ -29,9 +29,9 @@ class ConcoursController extends ContainerAware
 			$concours = new Concours();
 		}
 
-		$form = $this->container->get('form.factory')->create(new ConcoursForm(), $concours);
+		$form = $this->get('form.factory')->create(new ConcoursForm(), $concours);
 
-		$request = $this->container->get('request');
+		$request = $this->get('request');
 
 		if($request->getMethod() == 'POST'){
 
@@ -88,7 +88,7 @@ class ConcoursController extends ContainerAware
 			$msg = "Concours ajouté avec succès";
 		}
 
-		return $this->container->get('templating')->renderResponse('PatrickElevageBundle:Concours:editer.html.twig',
+		return $this->get('templating')->renderResponse('PatrickElevageBundle:Concours:editer.html.twig',
 			array('form' => $form->createView(),
 				'msg' => $msg
 			)
@@ -100,9 +100,9 @@ class ConcoursController extends ContainerAware
 
 		$msg = "";
 
-		$em = $this->container->get('doctrine')->getEntityManager();
+		$em = $this->get('doctrine')->getEntityManager();
 
-		$conn = $this->container->get('database_connection');
+		$conn = $this->get('database_connection');
 
 		$concours = $conn->fetchAll("
 			SELECT *, c.id AS idc FROM Concours c
@@ -116,7 +116,7 @@ class ConcoursController extends ContainerAware
 			$msg = "Il n'y a pas de concour disponible pour cette race";
 		}
 
-		return $this->container->get('templating')->renderResponse('PatrickElevageBundle:Concours:show.html.twig',
+		return $this->get('templating')->renderResponse('PatrickElevageBundle:Concours:show.html.twig',
 			array(
 				'concours' => $concours,
 				'msg' => $msg

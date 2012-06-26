@@ -48,6 +48,21 @@ class appprodUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::editAction',)), array('_route' => 'elevage_modifier'));
         }
 
+        // elevage_concour_ajouter
+        if ($pathinfo === '/admin/ajout/concour') {
+            return array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ConcoursController::editAction',  '_route' => 'elevage_concour_ajouter',);
+        }
+
+        // elevage_concour_modifier
+        if (0 === strpos($pathinfo, '/admin/modifier/concour') && preg_match('#^/admin/modifier/concour/(?P<id>[^/]+?)$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ConcoursController::editAction',)), array('_route' => 'elevage_concour_modifier'));
+        }
+
+        // elevage_concour_chiens
+        if (0 === strpos($pathinfo, '/concour/race') && preg_match('#^/concour/race/(?P<race>[^/]+?)$#xs', $pathinfo, $matches)) {
+            return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ConcoursController::showAction',)), array('_route' => 'elevage_concour_chiens'));
+        }
+
         // elevage_chiens
         if (0 === strpos($pathinfo, '/chien/race') && preg_match('#^/chien/race/(?P<race>[^/]+?)/chiot/(?P<chiot>[^/]+?)$#xs', $pathinfo, $matches)) {
             return array_merge($this->mergeDefaults($matches, array (  '_controller' => 'Patrick\\ElevageBundle\\Controller\\ChiensController::showAction',)), array('_route' => 'elevage_chiens'));

@@ -2,11 +2,9 @@
 
 namespace Patrick\ElevageBundle\Controller;
 
-use Symfony\Component\DependencyInjection\ContainerAware,
-       Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-
-class DefaultController extends ContainerAware
+class DefaultController extends Controller
 {
 
     public function indexAction()
@@ -14,12 +12,12 @@ class DefaultController extends ContainerAware
 
 		$message = "Meh";
 
-        return $this->container->get('templating')->renderResponse('PatrickElevageBundle:Default:index.html.twig',
+        return $this->get('templating')->renderResponse('PatrickElevageBundle:Default:index.html.twig',
 			array('message' => $message)
 		);
     }
 
 	public function contactAction(){
-        return $this->container->get('templating')->renderResponse('PatrickElevageBundle:Default:contact.html.twig');
+        return $this->get('templating')->renderResponse('PatrickElevageBundle:Default:contact.html.twig');
 	}
 }

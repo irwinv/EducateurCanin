@@ -2,8 +2,8 @@
 
 namespace Patrick\ElevageBundle\Controller;
 
-use Symfony\Component\DependencyInjection\ContainerAware,
-       Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 //Entity
 use Patrick\ElevageBundle\Entity\Chiens;
@@ -12,14 +12,14 @@ use Patrick\ElevageBundle\Entity\Images;
 //Formulaire
 use Patrick\ElevageBundle\Form\ChiensForm;
 
-class ChiensController extends ContainerAware
+class ChiensController extends Controller
 {
 
 	public function editAction($id = null){
 
 		$msg = "";
 
-		$em = $this->container->get('doctrine')->getEntityManager();
+		$em = $this->get('doctrine')->getEntityManager();
 
 		if(isset($id)){
 			$chiens = $em->find('PatrickElevageBundle:Chiens', $id);
@@ -29,9 +29,9 @@ class ChiensController extends ContainerAware
 			$chiens = new Chiens();
 		}
 
-		$form = $this->container->get('form.factory')->create(new ChiensForm(), $chiens);
+		$form = $this->get('form.factory')->create(new ChiensForm(), $chiens);
 
-		$request = $this->container->get('request');
+		$request = $this->get('request');
 
 		if($request->getMethod() == 'POST'){
 
@@ -88,7 +88,7 @@ class ChiensController extends ContainerAware
 			$msg = "Chien ajouté avec succès";
 		}
 
-		return $this->container->get('templating')->renderResponse('PatrickElevageBundle:Chiens:editer.html.twig',
+		return $this->get('templating')->renderResponse('PatrickElevageBundle:Chiens:editer.html.twig',
 			array('form' => $form->createView(),
 				'msg' => $msg
 			)
@@ -100,9 +100,9 @@ class ChiensController extends ContainerAware
 
 		$msg = "";
 
-		$em = $this->container->get('doctrine')->getEntityManager();
+		$em = $this->get('doctrine')->getEntityManager();
 
-		$conn = $this->container->get('database_connection');
+		$conn = $this->get('database_connection');
 
 		$chiens = $conn->fetchAll("
 			SELECT *, c.id AS idc FROM Chiens c
@@ -117,7 +117,7 @@ class ChiensController extends ContainerAware
 			$msg = "Il n'y a pas de chien disponible pour cette race	";
 		}
 
-		return $this->container->get('templating')->renderResponse('PatrickElevageBundle:Chiens:show.html.twig',
+		return $this->get('templating')->renderResponse('PatrickElevageBundle:Chiens:show.html.twig',
 			array(
 				'chiens' => $chiens,
 				'msg' => $msg
