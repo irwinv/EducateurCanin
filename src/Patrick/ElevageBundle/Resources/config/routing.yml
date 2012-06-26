@@ -11,15 +11,15 @@ elevage_modifier:
     defaults: { _controller: PatrickElevageBundle:Chiens:edit }
 
 elevage_concour_ajouter:
-    pattern:  /admin/ajout/concour
+    pattern:  /admin/ajout/concours
     defaults: { _controller: PatrickElevageBundle:Concours:edit }
 
 elevage_concour_modifier:
-    pattern:  /admin/modifier/concour/{id}
+    pattern:  /admin/modifier/concours/{id}
     defaults: { _controller: PatrickElevageBundle:Concours:edit }
 
 elevage_concour_chiens:
-    pattern:  /concour/race/{race}
+    pattern:  /concours/race/{race}
     defaults: { _controller: PatrickElevageBundle:Concours:show }
 
 elevage_chiens:
