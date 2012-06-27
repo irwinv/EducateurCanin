@@ -60,16 +60,21 @@ class __TwigTemplate_bc71364678976e107f173d847e53617f extends Twig_Template
             // line 17
             echo twig_escape_filter($this->env, $this->getAttribute($this->getContext($context, "concour"), "titre"), "html", null, true);
             echo "</strong>
+\t\t\t\t\t\t\t<p>&nbsp;</p>
 \t\t\t\t\t\t\t";
-            // line 18
+            // line 19
             if ($this->env->getExtension('security')->isGranted("IS_AUTHENTICATED_REMEMBERED")) {
-                // line 19
-                echo "\t\t\t\t\t\t\t\t<div class=\"btn_modif\"><a href=\"";
+                // line 20
+                echo "\t\t\t\t\t\t\t\t<div class=\"btn_modif_concours\"><a href=\"";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_concour_modifier", array("id" => $this->getAttribute($this->getContext($context, "concour"), "idc"))), "html", null, true);
                 echo "\">Modifier</a></div>
+\t\t\t\t\t\t\t\t<div class=\"btn_modif_concours\"><a href=\"";
+                // line 21
+                echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("elevage_concour_supprimer", array("id" => $this->getAttribute($this->getContext($context, "concour"), "idc"))), "html", null, true);
+                echo "\">Supprimer</a></div>
 \t\t\t\t\t\t\t";
             }
-            // line 21
+            // line 23
             echo "\t\t\t\t\t\t</div>
 \t\t\t\t\t</div>
 \t\t\t\t</li>
@@ -78,7 +83,7 @@ class __TwigTemplate_bc71364678976e107f173d847e53617f extends Twig_Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['concour'], $context['_parent'], $context['loop']);
         $context = array_merge($_parent, array_intersect_key($context, $_parent));
-        // line 25
+        // line 27
         echo "\t\t\t</ul>
 \t\t\t<div class=\"clear\"></div>
 \t\t</div>

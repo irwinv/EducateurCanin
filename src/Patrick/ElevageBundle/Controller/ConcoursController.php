@@ -125,6 +125,32 @@ class ConcoursController extends Controller
 
 	}
 
+	public function supprimerAction($id = null){
+		$em = $this->get('doctrine')->getEntityManager();
+		$supp = $em->find('PatrickElevageBundle:Concours', $id);
+		$img = $em->getRepository('PatrickElevageBundle:ImagesConcours')->findOneBy(
+			array('concour' => $supp->getId())
+		);
+
+		if($supp){
+			$em->remove($supp);
+			$em->flush();
+		}
+
+		$path 				= __DIR__."/../../../../web/uploads";
+		$thumbpath 	= __DIR__."/../../../../web/uploads/thumbs";
+
+		@unlink($path.'/'.$img->getImg());
+		@unlink($thumbpath.'/'.$img->getThumb());
+
+		$route = $this->get('router')->generate("elevage_concour_chiens",
+			array(
+				'race' => $supp->getRace()
+			)
+		);
+		return new RedirectResponse($route);
+	}
+
 	 /**************************\
 	 *@author villamizar Irwin
 	 *@acces : public

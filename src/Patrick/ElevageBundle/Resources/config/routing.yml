@@ -2,6 +2,14 @@ elevage_accueil:
     pattern:  /
     defaults: { _controller: PatrickElevageBundle:Default:index }
 
+elevage_chiens:
+    pattern:  /chien/race/{race}/chiot/{chiot}
+    defaults: { _controller: PatrickElevageBundle:Chiens:show }
+
+elevage_contact:
+    pattern:  /contact
+    defaults: { _controller: PatrickElevageBundle:Default:contact }
+
 elevage_ajouter:
     pattern:  /admin/ajout
     defaults: { _controller: PatrickElevageBundle:Chiens:edit }
@@ -9,6 +17,22 @@ elevage_ajouter:
 elevage_modifier:
     pattern:  /admin/modifier/{id}
     defaults: { _controller: PatrickElevageBundle:Chiens:edit }
+
+elevage_supprimer:
+    pattern:  /admin/supprimer/{id}
+    defaults: { _controller: PatrickElevageBundle:Chiens:supprimer }
+
+elevage_ajouter_presentation:
+    pattern:  /admin/ajout/presentation
+    defaults: { _controller: PatrickElevageBundle:Presentation:edit }
+
+elevage_modifier_presentation:
+    pattern:  /admin/ajout/presentation/{id}
+    defaults: { _controller: PatrickElevageBundle:Presentation:edit }
+
+elevage_concour_chiens:
+    pattern:  /concours/race/{race}
+    defaults: { _controller: PatrickElevageBundle:Concours:show }
 
 elevage_concour_ajouter:
     pattern:  /admin/ajout/concours
@@ -18,17 +42,9 @@ elevage_concour_modifier:
     pattern:  /admin/modifier/concours/{id}
     defaults: { _controller: PatrickElevageBundle:Concours:edit }
 
-elevage_concour_chiens:
-    pattern:  /concours/race/{race}
-    defaults: { _controller: PatrickElevageBundle:Concours:show }
-
-elevage_chiens:
-    pattern:  /chien/race/{race}/chiot/{chiot}
-    defaults: { _controller: PatrickElevageBundle:Chiens:show }
-
-elevage_contact:
-    pattern:  /contact
-    defaults: { _controller: PatrickElevageBundle:Default:contact }
+elevage_concour_supprimer:
+    pattern:  /admin/supprimer/concours/{id}
+    defaults: { _controller: PatrickElevageBundle:Concours:supprimer }
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

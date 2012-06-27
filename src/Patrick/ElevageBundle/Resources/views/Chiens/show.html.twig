@@ -20,6 +20,7 @@
 							<p><img src="/bundles/patrickelevage/images/icon/male.png" /></p>
 							{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 								<div class="btn_modif"><a href="{{ path('elevage_modifier', {'id' : chien.idc }) }}">Modifier</a></div>
+								<div class="btn_modif"><a href="{{ path('elevage_supprimer', {'id' : chien.idc }) }}">Supprimer</a></div>
 							{% endif %}
 						</div>
 					</div>
@@ -43,6 +44,7 @@
 							<p><img src="/bundles/patrickelevage/images/icon/female.png" /></p>
 							{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
 								<div class="btn_modif"><a href="{{ path('elevage_modifier', {'id' : chien.idc }) }}">Modifier</a></div>
+								<div class="btn_modif"><a href="{{ path('elevage_supprimer', {'id' : chien.idc }) }}">Supprimer</a></div>
 							{% endif %}
 						</div>
 					</div>

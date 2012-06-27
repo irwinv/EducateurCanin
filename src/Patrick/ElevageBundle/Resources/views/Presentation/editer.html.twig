@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+	<form action="#" {{ form_enctype(form) }} method="POST">
+		<p>{{ msg }}</p>
+		{{ form_label(form.presentation) }}<br />
+		{{ form_widget(form.presentation) }}<br />
+		<input type="submit" value="Enregistrer" />
+		{{ form_rest(form) }}
+	</form>
+{% endblock body %}

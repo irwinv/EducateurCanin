@@ -3,8 +3,9 @@
 	<p>{{ 'Login'|trans({}, 'FOSUserBundle') }}: {{ user.username }}</p>
 	<p>{{ 'Mail'|trans({}, 'FOSUserBundle') }}: {{ user.email }}</p></br />
 	<ul>
-		<li><a href="{{ path('elevage_ajouter') }} ">Ajouter un chien</a></li>
-		<li><a href="{{ path('elevage_concour_ajouter') }} ">Ajouter un concours</a></li>
+		<li><a href="{{ path('elevage_ajouter') }} ">Ajouter des Chiens/Chiots</a></li>
+		<li><a href="{{ path('elevage_concour_ajouter') }} ">Ajouter un ou plusieurs Concours</a></li>
+		<li><a href="{{ path('elevage_modifier_presentation', {'id' : 12}) }} ">Modifier texte de Présentation (page d'accueil)</a></li>
 		<li>Voir et modifier les :</li>
 		<li><strong>Bergers de Caucases : </strong></li>
 		<li><a href="{{ path('elevage_chiens', {'race' : 1, 'chiot' : 0 }) }}">Mes Chiens</a></li>

@@ -5,4 +5,4 @@ PatrickUtilisateurBundle:
 
 PatrickElevageBundle:
     resource: "@PatrickElevageBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /elevage

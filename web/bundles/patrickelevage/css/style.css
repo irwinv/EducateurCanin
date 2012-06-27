@@ -19,6 +19,11 @@ ul{
 
 a{ color :#fff; text-decoration:none; } a:hover{ text-decoration:underline;}
 
+textarea{
+	width:50%;
+	height:240px;
+}
+
 div.clear{
 	clear:both;
 }
@@ -155,20 +160,49 @@ div#liste_des_chiens div#bouet_ul ul li div.details{
 
 div#liste_des_chiens div#bouet_ul ul li div.details div.btn_modif{
 	position:relative;
-	top:52px;
-	left:140px;
+	display:inline;
 	background:#fff;
 	color:#000;
 	width:60px;
 	height:20px;
 }
 
-div#liste_des_chiens div#bouet_ul ul li div.details div.btn_modif a{
+div#accueil_gauche div.btn_modif {
+	text-align:center;
+	background:#fff;
+	color:#000;
+	width:220px;
+	height:20px;
+}
+
+div#liste_des_chiens div#bouet_ul ul li div.details div.btn_modif a,
+div#accueil_gauche div.btn_modif a{
+	border:1px solid #000;
 	color:#000;
 	text-decoration:none;
 }
 
-div#liste_des_chiens div#bouet_ul ul li div.details div.btn_modif a{
+div#liste_des_chiens div#bouet_ul ul li div.details div.btn_modif a:hover,
+div#accueil_gauche div.btn_modif a:hover{
+	text-decoration:underline;
+}
+
+div#liste_des_chiens div#bouet_ul ul li div.details div.btn_modif_concours{
+	position:relative;
+	display:inline;
+	background:#fff;
+	color:#000;
+	width:120px;
+	height:20px;
+}
+
+div#liste_des_chiens div#bouet_ul ul li div.details div.btn_modif_concours a {
+	border:1px solid #000;
+	color:#000;
+	text-decoration:none;
+}
+
+div#liste_des_chiens div#bouet_ul ul li div.details div.btn_modif_concours a:hover {
 	text-decoration:underline;
 }
 
@@ -183,6 +217,7 @@ div#contact_infos p{
 
 div#contact_infos div#bgfblike{
 	background:#fff;
+	margin:0 auto;
 }
 
 div#footer{

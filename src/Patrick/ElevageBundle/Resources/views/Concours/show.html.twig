@@ -15,8 +15,10 @@
 						</div>
 						<div class="details">
 							<strong>{{ concour.titre }}</strong>
+							<p>&nbsp;</p>
 							{% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}
-								<div class="btn_modif"><a href="{{ path('elevage_concour_modifier', {'id' : concour.idc }) }}">Modifier</a></div>
+								<div class="btn_modif_concours"><a href="{{ path('elevage_concour_modifier', {'id' : concour.idc }) }}">Modifier</a></div>
+								<div class="btn_modif_concours"><a href="{{ path('elevage_concour_supprimer', {'id' : concour.idc }) }}">Supprimer</a></div>
 							{% endif %}
 						</div>
 					</div>

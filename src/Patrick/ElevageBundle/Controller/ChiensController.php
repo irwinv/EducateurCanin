@@ -126,6 +126,34 @@ class ChiensController extends Controller
 
 	}
 
+	public function supprimerAction($id = null){
+
+		$em = $this->get('doctrine')->getEntityManager();
+		$supp = $em->find('PatrickElevageBundle:Chiens', $id);
+		$img = $em->getRepository('PatrickElevageBundle:Images')->findOneBy(
+			array('chien' => $supp->getId())
+		);
+
+		if($supp){
+			$em->remove($supp);
+			$em->flush();
+		}
+
+		$path 				= __DIR__."/../../../../web/uploads";
+		$thumbpath 	= __DIR__."/../../../../web/uploads/thumbs";
+
+		@unlink($path.'/'.$img->getImg());
+		@unlink($thumbpath.'/'.$img->getThumb());
+
+		$route = $this->get('router')->generate("elevage_chiens",
+			array(
+				'race' => $supp->getRace(),
+				'chiot' => $supp->getchiot()
+			)
+		);
+		return new RedirectResponse($route);
+	}
+
 	 /**************************\
 	 *@author villamizar Irwin
 	 *@acces : public
