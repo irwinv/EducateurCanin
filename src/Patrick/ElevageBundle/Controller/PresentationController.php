@@ -5,7 +5,7 @@ namespace Patrick\ElevageBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 //Entity
-use Patrick\ElevageBundle\Entity\Presentation;
+use Patrick\ElevageBundle\Entity;
 
 //Formulaire
 use Patrick\ElevageBundle\Form\PresentationForm;

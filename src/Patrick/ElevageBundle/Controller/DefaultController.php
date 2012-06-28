@@ -4,7 +4,7 @@ namespace Patrick\ElevageBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-use Patrick\ElevageBundle\Entity\Presentation;
+use Patrick\ElevageBundle\Entity;
 
 class DefaultController extends Controller
 {

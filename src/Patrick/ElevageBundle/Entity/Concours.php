@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Patrick\ElevageBundle\Entity\Chiens
  *
  * @ORM\Table()
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Patrick\ElevageBundle\Repository\ConcoursRepository")
  */
 class Concours
 {
@@ -45,11 +45,11 @@ class Concours
     {
         $this->imgconcours = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -69,7 +69,7 @@ class Concours
     /**
      * Get titre
      *
-     * @return string 
+     * @return string
      */
     public function getTitre()
     {
@@ -89,7 +89,7 @@ class Concours
     /**
      * Get race
      *
-     * @return integer 
+     * @return integer
      */
     public function getRace()
     {
@@ -109,7 +109,7 @@ class Concours
     /**
      * Get imgconcours
      *
-     * @return Doctrine\Common\Collections\Collection 
+     * @return Doctrine\Common\Collections\Collection
      */
     public function getImgconcours()
     {

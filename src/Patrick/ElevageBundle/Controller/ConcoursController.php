@@ -6,8 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 //Entity
-use Patrick\ElevageBundle\Entity\Concours;
-use Patrick\ElevageBundle\Entity\ImagesConcours;
+use Patrick\ElevageBundle\RepositoryEntity;
 
 //Formulaire
 use Patrick\ElevageBundle\Form\ConcoursForm;
@@ -102,15 +101,7 @@ class ConcoursController extends Controller
 
 		$em = $this->get('doctrine')->getEntityManager();
 
-		$conn = $this->get('database_connection');
-
-		$concours = $conn->fetchAll("
-			SELECT *, c.id AS idc FROM Concours c
-			   LEFT JOIN ImagesConcours ic ON c.id = ic.concour_id
-				  WHERE c.race = $race
-				      GROUP BY ic.concour_id
-					     ORDER BY c.titre ASC
-		");
+		$concours = $em->getRepository('PatrickElevageBundle:Concours')->getConcours($race);
 
 		if(!$concours){
 			$msg = "Il n'y a pas de concour disponible pour cette race";

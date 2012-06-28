@@ -6,8 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
 //Entity
-use Patrick\ElevageBundle\Entity\Chiens;
-use Patrick\ElevageBundle\Entity\Images;
+use Patrick\ElevageBundle\Repository;
 
 //Formulaire
 use Patrick\ElevageBundle\Form\ChiensForm;
@@ -100,18 +99,9 @@ class ChiensController extends Controller
 
 		$msg = "";
 
-		$em = $this->get('doctrine')->getEntityManager();
+		$em = $this->getDoctrine()->getEntityManager();
 
-		$conn = $this->get('database_connection');
-
-		$chiens = $conn->fetchAll("
-			SELECT *, c.id AS idc FROM Chiens c
-			   LEFT JOIN Images i ON c.id = i.chien_id
-				  WHERE c.chiot = $chiot
-				   && c.race = $race
-				      GROUP BY i.chien_id
-					     ORDER BY c.nom ASC
-		");
+		$chiens = $em->getRepository('PatrickElevageBundle:Chiens')->getChiensParRace($race, $chiot);
 
 		if(!$chiens){
 			$msg = "Il n'y a pas de chien disponible pour cette race	";

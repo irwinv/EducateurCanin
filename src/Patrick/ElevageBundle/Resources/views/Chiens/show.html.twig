@@ -6,8 +6,31 @@
 		<div id="bouet_ul">
 			<ul>
 			{% for chien in chiens %}
-				{% if chien.sexe =="M" %}
+
+				{% if chien.sexe == "M" %}
 				<li>
+					{% block title %}
+
+						{% set race = app.request.get('race') %}
+						{% set chiot = app.request.get('chiot') %}
+						{% set sexe = app.request.get('sexe') %}
+
+						{% if  race == 1 %}
+							{% if chiot == 1 %}
+								{% set titre = "Chiens adults Bergers du Caucase mâles" %}
+							{% else %}
+								{% set titre = "Chiots Bergers du Caucase males" %}
+							{% endif %}
+						{% else %}
+							{% if chiot == 1 %}
+								{% set titre = "Chiens adults Bergers d'Asie Centrale males" %}
+							{% else %}
+								{% set titre = "Chiots Bergers du Caucase males" %}
+							{% endif %}
+						{% endif %}
+
+						{{ titre }}
+					{% endblock %}
 					<div class="bouet">
 						<div class="thumb">
 							<a href="/uploads/{{ chien.img}}" rel="lightbox">
